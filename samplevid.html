@@ -1,0 +1,41 @@
+<!-- Jquery --><head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="http://vjs.zencdn.net/5.19.0/video-js.css" rel="stylesheet">
+
+  <!-- If you'd like to support IE8 -->
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+</head>
+
+<body>
+  <video id="my-video" class="video-js" controls preload="auto" width="720" height="480"
+  poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+    <source src="videos/plastic.mp4" type='video/mp4'>
+    <source src="videos/plastic.webm" type='video/webm'>
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+<button id="big" class= "btn btn-primary">punch</button>
+<script>
+  $(document).ready(function() {
+    size = true
+    console.log("okay")
+    $(document.body).on("click", "#big", function(e){
+     e.preventDefault();
+     if(size) {
+     $("#my-video").attr("height", "720")
+     $("#my-video").attr("width", "1080")
+     size = false
+   }
+   else {
+     $("#my-video").attr("height", "480")
+     $("#my-video").attr("width", "720")
+     size = true
+   }
+   })
+  })
+</script>
